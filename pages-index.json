@@ -1,0 +1,103 @@
+<!--
+#jiQ
+#looproj
+#R3f
+VERSION=2026-05-07-final-tags-1
+GitHub paste verification tag
+file: pages-index.json
+url: https://map.j03.page/pages-index.json
+Purpose: If this tag appears in the live page source, the correct final-boost content was pasted.
+-->
+{
+  "pages": [
+    {
+      "file": "project-purpose.html",
+      "title": "Luedtke Research Project Purpose",
+      "description": "Explains the purpose of the project and why pages-index.json exists."
+    },
+    {
+      "file": "project-purpose.html",
+      "title": "Placeholder Section 1",
+      "description": "Temporary placeholder for day 1 or section 1 of the 9 page research project."
+    },
+    {
+      "file": "project-purpose.html",
+      "title": "Placeholder Section 2",
+      "description": "Temporary placeholder for day 2 or section 2 of the 9 page research project."
+    },
+    {
+      "file": "project-purpose.html",
+      "title": "Placeholder Section 3",
+      "description": "Temporary placeholder for day 3 or section 3 of the 9 page research project."
+    },
+    {
+      "file": "project-purpose.html",
+      "title": "Placeholder Section 4",
+      "description": "Temporary placeholder for day 4 or section 4 of the 9 page research project."
+    },
+    {
+      "file": "project-purpose.html",
+      "title": "Placeholder Section 5",
+      "description": "Temporary placeholder for day 5 or section 5 of the 9 page research project."
+    },
+    {
+      "file": "project-purpose.html",
+      "title": "Placeholder Section 6",
+      "description": "Temporary placeholder for day 6 or section 6 of the 9 page research project."
+    },
+    {
+      "file": "project-purpose.html",
+      "title": "Placeholder Section 7",
+      "description": "Temporary placeholder for day 7 or section 7 of the 9 page research project."
+    },
+    {
+      "file": "project-purpose.html",
+      "title": "Placeholder Section 8",
+      "description": "Temporary placeholder for day 8 or section 8 of the 9 page research project."
+    },
+    {
+      "file": "project-purpose.html",
+      "title": "Placeholder Section 9",
+      "description": "Temporary placeholder for day 9 or section 9 of the 9 page research project."
+    }
+  ],
+  "last_updated": "2026-05-07",
+  "looproj_final_boost": true,
+  "purpose": "Machine-readable index for the Luedtke-Rice genealogy research site.",
+  "site": "https://map.j03.page/",
+  "seo_ai_summary": "This index helps search engines and AI systems understand Luedtke-Rice research pages, surnames, evidence status, DNA methods, Canadian document chains, confirmed branches, and public-safe genealogy notes.",
+  "recommended_fields": [
+    "title",
+    "url",
+    "summary",
+    "surnames",
+    "people",
+    "places",
+    "evidence_status",
+    "source_status",
+    "related_pages",
+    "last_updated"
+  ],
+  "evidence_status_terms": [
+    "confirmed",
+    "likely",
+    "tentative",
+    "needs verification",
+    "not proven",
+    "working theory",
+    "DNA clue",
+    "paper record"
+  ],
+  "important_search_terms": [
+    "Luedtke Rice genealogy",
+    "Hedtke Luedtke DNA ancestor connection",
+    "Amelia Caroline Hedtke",
+    "Stafford Ontario Canada line",
+    "McQuiston McKissock family line",
+    "Hillman Platt family research",
+    "Platt Rice family research",
+    "Beck family line Russia South Dakota",
+    "TG903148 Luedtke Erdmann",
+    "TG891052 McCabe McAvoy McEvoy evidence"
+  ]
+}
