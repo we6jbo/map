@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://map.j03.page/sitemap.xml
