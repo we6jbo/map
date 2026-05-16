@@ -1,223 +1,902 @@
-<!DOCTYPE html>
-<!--
-#3L
-#looproj
-#R3f
-VERSION=2026-05-16-map-page-added-1
-GitHub paste verification tag
-file: index.html
-url: https://map.j03.page/index.html
-Purpose: If this tag appears in the live page source, the correct map-page content was pasted.
--->
-<!--
-#xJtxl-7
-looproj GitHub paste verification tag
-file: index.html
-url: https://map.j03.page/index.html
-Purpose: If this tag appears on GitHub.com or the live page source, Jeremiah pasted the correct tagged content.
--->
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Luedtke-Rice Genealogy Research</title>
-  <meta name="description" content="Luedtke-Rice genealogy research home page with DNA methods, evidence status, surnames, Canadian records, confirmed branches, public-safe notes, and kayaking family-history field notes at map.j03.page.">
-  <meta name="keywords" content="Luedtke, Luedke, Liedtke, Ludtke, Lüdtke, Rice, Riewe, Hartfiel, Heymann, genealogy, family history, DNA, Wisconsin, Minnesota, Pomerania, Prussia, Grabowo, Krojanke, Flatow, Hedtke, Amelia Caroline Luedtke, Robert Richard Hedtke, kayaking genealogy, family map, map.j03.page">
-  <link rel="canonical" href="https://map.j03.page/index.html">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Map FieldLog | Mission Bay Kayak Genealogy Codes | J03 Project</title>
+
+  <meta name="description" content="Map FieldLog by Jeremiah O'Neal. Decode Mission Bay kayak field codes, GoPro spoken metadata, family group shortcodes, Canadian genealogy research, Shapley, Stafford, Rice, Bair, Baum, Foster, Luedtke, Rice, and J03 field records.">
+  <meta name="keywords" content="map.j03.page, Map FieldLog, J03 Project, Jeremiah O'Neal, Mission Bay kayaking, San Diego kayak, GoPro field log, spoken metadata, genealogy field record, Canadian genealogy, Canadian citizenship research, Shapley genealogy, Stafford genealogy, Rice genealogy, Bair genealogy, Baum genealogy, Thomas Foster genealogy, Luedtke Rice research, Luedtke genealogy, Rice genealogy, TG code, Field Key, family group shortcode, kayak route, field code decoder, San Diego genealogy, cross-border genealogy, family history map, public genealogy record">
+  <meta name="author" content="Jeremiah O'Neal">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#0f766e">
+
+  <meta property="og:title" content="Map FieldLog | Mission Bay Kayak Genealogy Codes">
+  <meta property="og:description" content="Enter a short GoPro field code from Mission Bay kayaking records and open the related genealogy field note.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://map.j03.page/">
+
+  <link rel="canonical" href="https://map.j03.page/">
+
+  <!--
+    CHATGPT / AI MAINTAINER NOTES:
+    This page is designed as a single-page resolver for spoken GoPro field codes.
+    Core code shape: SS DD T A
+    Example: 7H014B2
+      SS = two-character family group shortcode
+      DD = day number, starting Jun 4, 2026 as 01
+      T  = time code, such as 4B
+      A  = Mission Bay area number
+    The page accepts compact codes like GH034B2 and dashed/spaced codes like GH-03-4B-2.
+    Keep this page static when possible. Add data to FAMILY_GROUPS, AREA_MAP, and SPECIAL_DAY_NOTES.
+    The user's goal is low-friction GoPro speech in wind/waves: "Map dot jay zero three dot page. Code GH034B2. Again, GH034B2."
+    Do not force long spoken paragraphs. Use the code as the durable link between video, route, date/time, location, and family group.
+  -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Map FieldLog",
+    "url": "https://map.j03.page/",
+    "applicationCategory": "ReferenceApplication",
+    "operatingSystem": "All",
+    "description": "A single-page Mission Bay kayak and genealogy field-code decoder for GoPro spoken metadata, family group shortcodes, and J03 field records.",
+    "creator": {
+      "@type": "Person",
+      "name": "Jeremiah O'Neal"
+    },
+    "keywords": [
+      "Mission Bay kayaking",
+      "GoPro spoken metadata",
+      "genealogy field log",
+      "Canadian genealogy",
+      "Shapley",
+      "Stafford",
+      "Rice",
+      "Bair",
+      "Baum",
+      "Thomas Foster",
+      "Luedtke Rice research",
+      "J03 Project"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f5fbfa;
+      --card: #ffffff;
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #cbd5e1;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --soft: #ccfbf1;
+      --warning: #fff7ed;
+      --warning-line: #fdba74;
+      --shadow: 0 14px 35px rgba(15, 23, 42, .10);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(20, 184, 166, .22), transparent 34rem),
+        linear-gradient(180deg, #ecfeff 0%, var(--bg) 45%, #ffffff 100%);
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 34px 0 20px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(148, 163, 184, .45);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1;
+      margin: 0 0 14px;
+      letter-spacing: -0.05em;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 68ch;
+      margin: 0;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: .92rem;
+      color: #334155;
+    }
+
+    .quick-say {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: var(--radius);
+      padding: 22px;
+      min-height: 100%;
+    }
+
+    .quick-say h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .say-line {
+      font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1.35;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    main {
+      padding: 18px 0 48px;
+    }
+
+    .decoder-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 22px;
+      align-items: start;
+      margin-top: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    input, select, button, textarea {
+      font: inherit;
+    }
+
+    .code-input {
+      width: 100%;
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 16px 18px;
+      border-radius: 16px;
+      border: 2px solid #99f6e4;
+      outline: none;
+      background: #ffffff;
+      font-weight: 900;
+    }
+
+    .code-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(20, 184, 166, .18);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 14px;
+      padding: 12px 16px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    button.secondary {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    button:hover {
+      filter: brightness(.97);
+    }
+
+    .help-box {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 16px;
+      background: var(--soft);
+      color: #134e4a;
+      border: 1px solid #5eead4;
+    }
+
+    .result {
+      min-height: 360px;
+    }
+
+    .result h2 {
+      margin-top: 0;
+    }
+
+    .result-card {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .result-title {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+
+    .code-pill {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 1.25rem;
+      font-weight: 900;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: #ecfeff;
+      border: 1px solid #67e8f9;
+      color: #155e75;
+    }
+
+    .kv {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 8px 14px;
+      padding: 8px 0;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+
+    .kv strong {
+      color: #334155;
+    }
+
+    .note {
+      margin-top: 14px;
+      padding: 14px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+    }
+
+    .warning {
+      background: var(--warning);
+      border: 1px solid var(--warning-line);
+      border-radius: 16px;
+      padding: 14px;
+      color: #7c2d12;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .mini {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, .06);
+    }
+
+    .mini h3 {
+      margin-top: 0;
+    }
+
+    .mini code {
+      font-size: 1.05rem;
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f8fafc;
+      color: #334155;
+      font-size: .92rem;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      border-top: 1px solid #e2e8f0;
+      background: rgba(255,255,255,.65);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .sr-seo {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .decoder-grid,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .kv {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <div class="sr-seo">
+    Map FieldLog is a Mission Bay kayak field record system for GoPro spoken metadata,
+    genealogy research, Canadian records, Canadian citizenship evidence review,
+    Shapley family, Stafford family, Rice family, Bair family, Baum family,
+    Thomas Foster, Luedtke Rice research, TG codes, family group shortcodes,
+    field keys, San Diego kayak records, and public family history map notes.
+  </div>
 
-<nav class="looproj-round2-nav" aria-label="Luedtke-Rice research navigation">
-  <p>
-    <a href="./index.html">Home</a> |
-    <a href="./pages-index.html">Pages Index</a> |
-    <a href="./project-purpose.html">Project Purpose</a> |
-    <a href="./confirmed-branches.html">Confirmed Branches</a> |
-    <a href="./surname-index.html">Surname Index</a> |
-    <a href="./evidence-status-index.html">Evidence Status Index</a> |
-    <a href="./dna-research-medthod.html">DNA Research Method</a> |
-    <a href="./canadian-citizenship-document-chain.html">Canadian Document Chain</a> |
-    <a href="./research-change-log.html">Research Change Log</a> |
-    <a href="https://map.j03.page/">Kayaking Family Map</a>
-  </p>
-</nav>
+  <header>
+    <div class="wrap hero">
+      <section class="panel">
+        <h1>Map FieldLog</h1>
+        <p class="subtitle">
+          Enter a short GoPro field code from a Mission Bay kayak recording.
+          The page opens the related family group, date, time block, location area,
+          and genealogy field note.
+        </p>
 
-  <h1>Luedtke and Rice Research Project</h1>
+        <div class="badge-row" aria-label="Project topics">
+          <span class="badge">Mission Bay kayak records</span>
+          <span class="badge">GoPro spoken metadata</span>
+          <span class="badge">Canadian genealogy</span>
+          <span class="badge">Family group shortcodes</span>
+          <span class="badge">J03 Project</span>
+        </div>
+      </section>
 
-  <p>Welcome to the public research page for the Luedtke and Rice family lines.</p>
-  <p>This page collects evidence notes, surname variants, migration clues, place names, and public discoveries.</p>
-  <p>Research surnames include: Luedtke, Luedke, Liedtke, Ludtke, Lüdtke, Rice, Riewe, Hartfiel, Heymann, and Hedtke.</p>
+      <aside class="quick-say" aria-label="How to say the code">
+        <h2>Best GoPro speech</h2>
+        <div class="say-line">
+          Map dot jay zero three dot page.<br>
+          Code 7H014B2.<br>
+          Again, 7H014B2.<br>
+          Canadian line.
+        </div>
+        <p>
+          Short speech is better for wind, waves, seawater, and automatic transcription.
+        </p>
+      </aside>
+    </div>
+  </header>
 
-  <p>
-    New summer field notes will also be connected through
-    <a href="https://map.j03.page/">map.j03.page</a>,
-    where I will talk about family history, genealogy clues, and public-safe ancestor research during my kayaking adventures.
-  </p>
+  <main>
+    <div class="wrap decoder-grid">
+      <section class="panel">
+        <h2>Open a field code</h2>
+        <p>
+          Type the code from the video. Dashes and spaces are okay.
+          Example: <strong>7H014B2</strong> or <strong>7H-01-4B-2</strong>.
+        </p>
 
-  <p>
-    <a href="https://map.j03.page/confirmed-branches.html">
-      View believed confirmed family tree branches
-    </a>
-  </p>
+        <label for="fieldCode">Field code</label>
+        <input id="fieldCode" class="code-input" value="7H014B2" autocomplete="off" spellcheck="false">
 
-  <p>
-    <a href="http://map.j03.page/pages-index.html">
-      View the full Luedtke and Rice research page index
-    </a>
-  </p>
+        <div class="button-row">
+          <button onclick="openCode()">Open code</button>
+          <button class="secondary" onclick="fillExample('7H014B2')">June 4 example</button>
+          <button class="secondary" onclick="fillExample('8J024B2')">June 5 example</button>
+          <button class="secondary" onclick="fillExample('GH034B2')">Thomas Foster</button>
+        </div>
 
-  <p>
-    <a href="https://map.j03.page/canada.html">
-      Canada family records and citizenship research
-    </a>
-  </p>
+        <div class="help-box">
+          <strong>Code shape:</strong> family shortcode + day + time + area.
+          <br>
+          Example <strong>7H014B2</strong> means family group <strong>7H</strong>,
+          day <strong>01</strong>, time <strong>4B</strong>, area <strong>2</strong>.
+        </div>
+      </section>
 
-  <p>
-    <a href="https://map.j03.page/">
-      Kayaking Family Map - Summer genealogy field notes and family-history talks
-    </a>
-  </p>
+      <section class="panel result" id="resultPanel" aria-live="polite">
+        <h2>Decoded result</h2>
+        <div id="resultBox" class="result-card">
+          Enter a code and press <strong>Open code</strong>.
+        </div>
+      </section>
+    </div>
 
-  <h2>Current focus</h2>
-  <p>Current research focuses on connecting documented family lines, comparing surname variants, reviewing migration clues, identifying record targets that may strengthen family connections, and linking public-safe kayaking field notes to family-history research.</p>
+    <div class="wrap">
+      <section class="cards" aria-label="How this system works">
+        <article class="mini">
+          <h3>1. Say the code</h3>
+          <p>
+            On the kayak, say only the site, the code twice, and one tiny topic.
+          </p>
+          <p><code>Map dot jay zero three dot page. Code GH034B2. Again, GH034B2.</code></p>
+        </article>
 
-  <h2>Known surname variants</h2>
-  <p>Luedtke, Luedke, Liedtke, Ludtke, Lüdtke, Rice, Riewe, Hartfiel, Heymann, and Hedtke.</p>
+        <article class="mini">
+          <h3>2. Enter the code</h3>
+          <p>
+            A visitor types the code into this page. The page decodes the family group,
+            date, time block, and Mission Bay area.
+          </p>
+        </article>
 
-  <h2>Key places in this research</h2>
-  <p>Grabowo, Krojanke, Flatow, West Prussia, Pomerania, Wisconsin, Minnesota, and summer kayaking locations connected to family-history field notes.</p>
+        <article class="mini">
+          <h3>3. Read the record</h3>
+          <p>
+            The result connects the GoPro clip to genealogy notes and points readers
+            toward the full Luedtke and Rice research site.
+          </p>
+        </article>
+      </section>
 
-  <h2>Kayaking Family Map</h2>
-  <p>
-    During summer kayaking trips, I will use
-    <a href="https://map.j03.page/">map.j03.page</a>
-    to talk about family history, genealogy research, ancestor clues, migration routes, place names, and public-safe field notes connected to this project.
-  </p>
+      <section class="panel" style="margin-top:22px">
+        <h2>Code guide</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Part</th>
+                <th>Example</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Family shortcode</td>
+                <td><strong>7H</strong></td>
+                <td>Family group or research topic.</td>
+              </tr>
+              <tr>
+                <td>Day number</td>
+                <td><strong>01</strong></td>
+                <td>June 4, 2026 is day 01. September 1, 2026 is day 90.</td>
+              </tr>
+              <tr>
+                <td>Time code</td>
+                <td><strong>4B</strong></td>
+                <td>4 hours after 7 AM = 11 AM hour. B = minutes 15–29.</td>
+              </tr>
+              <tr>
+                <td>Area</td>
+                <td><strong>2</strong></td>
+                <td>Mission Bay area number.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-  <h2>How to help</h2>
-  <p>If you are connected to these family lines and recognize a surname, place, family connection, kayaking field note, map clue, or research location, please share your clue, record lead, or correction.</p>
+      <section class="panel" style="margin-top:22px">
+        <h2>Family shortcode chart</h2>
+        <p>
+          These are the main shortcodes currently built into this static page.
+          More can be added later without changing the code shape.
+        </p>
+        <div id="familyChart" class="table-wrap"></div>
+      </section>
 
-  <h2>No-cost research access</h2>
-  <p>This site highlights free or no-cost research paths whenever possible, so other researchers can review, source-link, and share the work without paywalls.</p>
+      <section class="panel" style="margin-top:22px">
+        <h2>Related research</h2>
+        <p>
+          To learn more about the Luedtke and Rice genealogy project, visit:
+          <a href="https://luedtkerice.j03.page/" rel="noopener">luedtkerice.j03.page</a>.
+        </p>
+        <p>
+          This map page is the fast field-record layer. The Luedtke-Rice site is the deeper
+          research layer for genealogy notes, family group analysis, DNA clues, and public research pages.
+        </p>
+      </section>
+    </div>
+  </main>
 
-  <h2>Status</h2>
-  <p>This is an active public genealogy project. More evidence notes, sources, map links, kayaking field notes, and collaboration options will be added soon.</p>
+  <footer>
+    <div class="wrap">
+      <p>
+        Map FieldLog is a public field-code decoder for Mission Bay kayak recordings,
+        GoPro spoken metadata, family history, and J03 genealogy research.
+      </p>
+      <div class="footer-links">
+        <a href="https://luedtkerice.j03.page/" rel="noopener">Luedtke &amp; Rice Research</a>
+        <a href="https://j03.page/" rel="noopener">J03 Page</a>
+      </div>
+    </div>
+  </footer>
 
-  <h2>Latest updates</h2>
+  <script>
+    /*
+      CHATGPT / AI MAINTAINER NOTES:
+      This page intentionally keeps the user workflow simple:
+      - GoPro speech: "Map dot jay zero three dot page. Code 7H014B2. Again, 7H014B2."
+      - Visitor action: enter the code in the input box.
+      - Page action: decode the code and show the family group record.
 
-  <p>
-    <a href="https://map.j03.page/">
-      Kayaking Family Map - Summer genealogy field notes and family-history talks
-    </a>
-  </p>
-  <p>
-    Full map page URL:<br>
-    <a href="https://map.j03.page/">
-      https://map.j03.page/
-    </a>
-  </p>
+      The decoder accepts:
+      - 7H014B2
+      - 7H-01-4B-2
+      - 7H 01 4B 2
 
-  <p>
-    <a href="https://map.j03.page/confirmed-branches.html">
-      Confirmed Branches - Believed confirmed family tree branches
-    </a>
-  </p>
-  <p>
-    Full research page URL:<br>
-    <a href="https://map.j03.page/confirmed-branches.html">
-      https://map.j03.page/confirmed-branches.html
-    </a>
-  </p>
+      If adding more family groups:
+      - Add a new key to FAMILY_GROUPS.
+      - Use two-character shortcodes if possible.
+      - Avoid 0, 1, I, and O in family shortcodes because they are hard to hear.
+      - Keep comments because future ChatGPT sessions can build on this page.
+    */
 
-  <p>
-    <a href="https://map.j03.page/canada.html">
-      Canada Family Records - Shapley, Stafford, Rice, Bair, and Baum
-    </a>
-  </p>
-  <p>
-    Full research page URL:<br>
-    <a href="https://map.j03.page/canada.html">
-      https://map.j03.page/canada.html
-    </a>
-  </p>
+    const START_DATE_UTC = Date.UTC(2026, 5, 4); // June is month 5 in JS.
+    const SITE_NAME = "map.j03.page";
 
-  <p>
-    <a href="https://map.j03.page/Hedtke-to-Luedtke-DNA-Ancestor-Connection.html">
-      TG903148-C - Hedtke to Luedtke DNA Ancestor Connection
-    </a>
-  </p>
-  <p>
-    Full research page URL:<br>
-    <a href="https://map.j03.page/Hedtke-to-Luedtke-DNA-Ancestor-Connection.html">
-      https://map.j03.page/Hedtke-to-Luedtke-DNA-Ancestor-Connection.html
-    </a>
-  </p>
+    const FAMILY_GROUPS = {
+      "7H": {
+        tg: "TG618235",
+        title: "Canadian record line",
+        summary: "Canadian record line from the maternal side through Shapley, Stafford, Rice, Baum/Bowm, and Bair/Bare family links.",
+        speechTopic: "Canadian line",
+        researchType: "Canadian genealogy / cross-border family history"
+      },
+      "8J": {
+        tg: "TG759401",
+        title: "Olive G. Stafford and William Mark Stafford",
+        summary: "Stafford Canada link. This field note tests whether the family evidence could support a real Canadian citizenship claim, or whether the evidence falls short.",
+        speechTopic: "Stafford Canada link",
+        researchType: "Canadian citizenship evidence review"
+      },
+      "GH": {
+        tg: "TG8115374",
+        title: "Thomas Foster",
+        summary: "Thomas Foster, born 1700, died 11 Mar 1786 in Raw-lee Parish, Amelia County, United States. Spoken form avoids words that may transcribe poorly in wind.",
+        speechTopic: "Thomas Foster",
+        researchType: "Genealogy family group"
+      },
+      "6X": {
+        tg: "TG491628",
+        title: "Shapley family group",
+        summary: "Patrick Henry Shapley, William Shapley, and Clarissa Gridley research line.",
+        speechTopic: "Shapley",
+        researchType: "Canadian and cross-border genealogy"
+      },
+      "8M": {
+        tg: "TG762503",
+        title: "Rice family group",
+        summary: "Mary Rice, Ira Foster Rice, and Kezia Bair research line.",
+        speechTopic: "Rice",
+        researchType: "Canadian Rice line and migration research"
+      },
+      "6A": {
+        tg: "TG318940",
+        title: "Stafford family group",
+        summary: "William Mark Stafford, Joseph W. Stafford, and Hulda Sylvah research line.",
+        speechTopic: "Stafford",
+        researchType: "Canadian Stafford line and migration research"
+      },
+      "9K": {
+        tg: "TG907216",
+        title: "Waite family group",
+        summary: "Alice Waite, Barton J. Waite, and Susannah Clark Bacon research line.",
+        speechTopic: "Waite",
+        researchType: "Genealogy family group"
+      },
 
-  <p>
-    <a href="https://map.j03.page/following-amelia-caroline-luedtke-and-the-hedtke-line.html">
-      TG903148-B - Following Amelia Caroline Luedtke and the Hedtke Line
-    </a>
-  </p>
-  <p>
-    Full research page URL:<br>
-    <a href="https://map.j03.page/following-amelia-caroline-luedtke-and-the-hedtke-line.html">
-      https://map.j03.page/following-amelia-caroline-luedtke-and-the-hedtke-line.html
-    </a>
-  </p>
-  <p>
-    Matching public post on j03.page:<br>
-    <a href="https://j03.page/2026/04/18/tg903148-following-amelia-caroline-luedtke-and-the-hedtke-line/">
-      https://j03.page/2026/04/18/tg903148-following-amelia-caroline-luedtke-and-the-hedtke-line/
-    </a>
-  </p>
+      "TE": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "TW": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "NU": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "PN": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "LB": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "X7": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "LG": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "US": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "RY": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "HP": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "YH": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "KB": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "JX": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "RH": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "EH": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "JJ": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "LJ": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
 
-  <p>
-    <a href="https://map.j03.page/tg903148-a-following-the-luedtke-line-through-erdmann.html">
-      TG903148-A - Following the Luedtke Line Through Erdmann
-    </a>
-  </p>
-  <p>
-    <a href="https://j03.page/2026/04/17/tee-gee-903148-following-the-luedtke-line-through-erdmann/">
-      Read the full public post on j03.page
-    </a>
-  </p>
+      "2C": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "3X": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "3Q": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "4W": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" },
+      "4B": { tg: "WRITE-IN", title: "Write-in family group", summary: "Write-in family group field day.", speechTopic: "Write-in family group", researchType: "Write-in" }
+    };
 
-<section id="looproj-round2-evidence-status" class="looproj-round2-evidence-status">
-  <h2>Evidence Status and Research Use</h2>
-  <p><strong>Evidence status:</strong> This page is part of a public-safe genealogy research project. It may contain confirmed records, likely matches, tentative clues, working theories, and items that still need verification. A family relationship should be treated as confirmed only when the page or a linked source clearly supports that conclusion.</p>
-  <p>The topic of this page is Luedtke-Rice genealogy home page, including surnames, DNA methods, evidence status, confirmed branches, Canadian records, public-safe research goals, and summer kayaking family-history notes at map.j03.page. This topic should be read together with related Luedtke-Rice research pages, the confirmed branches page, the surname index, the evidence status index, the project purpose page, and the kayaking family map.</p>
+    const AREA_MAP = {
+      "1": "Mission Bay area 1",
+      "2": "Mission Bay area 2",
+      "3": "Mission Bay area 3",
+      "4": "Mission Bay area 4",
+      "5": "Mission Bay area 5",
+      "6": "Mission Bay area 6",
+      "7": "Mission Bay area 7",
+      "8": "Mission Bay area 8",
+      "9": "Mission Bay area 9"
+    };
 
-  <h2>AI and Search Context</h2>
-  <p>This page uses plain visible text so human readers, search engines, and AI systems can understand the research context. Important search terms include genealogy, ancestor research, DNA evidence, family line, public records, source review, evidence status, confirmed, tentative, needs verification, not proven, census, birth record, death record, marriage record, obituary, cemetery record, surname variant, cousin match, kayaking genealogy notes, summer family-history field notes, and map.j03.page.</p>
+    const SPECIAL_DAY_NOTES = {
+      "01": "June 4 opening Canadian record line field note.",
+      "02": "June 5 Stafford Canada link field note.",
+      "03": "Thomas Foster field note begins."
+    };
 
-  <h2>Related Surnames and Places</h2>
-  <p>Related surnames and research paths may include Luedtke, Lüdtke, Luedke, Ludtke, Hedtke, Rice, Stafford, Shapley, McQuiston, McKissock, Platt, Hillman, Beck, McCabe, McAvoy, McEvoy, Sloan, Schlorf, Amelia Caroline Hedtke, Amelia Caroline Luedtke, Erdmann Luedtke, William Mark Stafford, Ontario, Canada West, Pomerania, Minnesota, South Dakota, Iowa, Wisconsin, kayaking locations, map notes, and related United States records.</p>
+    function normalizeCode(raw) {
+      return String(raw || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+    }
 
-  <h2>Next Review Steps</h2>
-  <p>Next review steps include checking whether each claim has a source, whether each source supports the exact statement being made, whether a DNA clue is being kept separate from paper-record proof, whether uncertain items are clearly marked as tentative or needing verification, and whether kayaking field notes link back to stable genealogy pages when appropriate.</p>
+    function pad2(n) {
+      return String(n).padStart(2, "0");
+    }
 
-  <p><strong>Last updated:</strong> 2026-05-16. <strong>Project tags:</strong> #looproj #R3f.</p>
-</section>
+    function dateFromDay(dayNumber) {
+      const ms = START_DATE_UTC + (dayNumber - 1) * 86400000;
+      const d = new Date(ms);
+      return d.toISOString().slice(0, 10);
+    }
 
+    function longDateFromDay(dayNumber) {
+      const ms = START_DATE_UTC + (dayNumber - 1) * 86400000;
+      const d = new Date(ms);
+      return d.toLocaleDateString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "UTC"
+      });
+    }
 
-<section id="looproj-final-boost" class="looproj-final-boost">
-  <h2>Evidence Status</h2>
-  <p><strong>Evidence status:</strong> This page is part of the Luedtke-Rice public genealogy research project. It may include confirmed records, likely matches, tentative clues, working theories, and items that still need verification. A claim should be treated as confirmed only when the page or linked source clearly supports that conclusion.</p>
+    function hourLabel(hour24) {
+      if (hour24 === 0) return "12 AM";
+      if (hour24 < 12) return hour24 + " AM";
+      if (hour24 === 12) return "12 PM";
+      return (hour24 - 12) + " PM";
+    }
 
-  <h2>Research Context</h2>
-  <p>The main topic of this page is Luedtke-Rice genealogy home page, surnames, DNA methods, Canadian records, confirmed branches, public-safe evidence status, and related summer kayaking genealogy field notes at map.j03.page. This page should be read with the project purpose page, confirmed branches page, surname index, evidence status index, DNA research method page, Canadian document chain page, research change log, and kayaking family map.</p>
+    function minuteRange(letter) {
+      const table = {
+        A: "00–14",
+        B: "15–29",
+        C: "30–44",
+        D: "45–59"
+      };
+      return table[letter] || null;
+    }
 
-  <h2>Search and AI Context</h2>
-  <p>This page uses clear visible text for genealogy, ancestor research, family-line evidence, DNA clues, public records, source review, confirmed evidence, tentative evidence, not-proven clues, census records, birth records, death records, marriage records, cemetery records, obituaries, surname variants, place-name variants, cousin-match research, kayaking genealogy notes, summer family-history field notes, family map notes, and map.j03.page.</p>
+    function parseFieldCode(raw) {
+      const code = normalizeCode(raw);
 
-  <h2>Related Names and Places</h2>
-  <p>Related research names and terms may include Luedtke, Lüdtke, Luedke, Ludtke, Hedtke, Rice, Stafford, Shapley, McQuiston, McKissock, Platt, Hillman, Beck, McCabe, McAvoy, McEvoy, Sloan, Schlorf, Amelia Caroline Hedtke, Amelia Caroline Luedtke, Erdmann Luedtke, William Mark Stafford, Ontario, Canada West, Pomerania, Minnesota, South Dakota, Iowa, Wisconsin, kayaking locations, summer map notes, and public United States records.</p>
+      const match = code.match(/^([A-Z0-9]{2})([0-9]{2})(0|[1-9]|1[0-2])([ABCD])([1-9])$/);
+      if (!match) {
+        throw new Error("Code must look like 7H014B2 or 7H-01-4B-2.");
+      }
 
-  <h2>Next Steps</h2>
-  <p>Next research steps include checking exact source support, separating DNA clues from paper-record proof, marking uncertain claims as tentative, adding source links, improving internal links, keeping the sitemap updated after each public page change, and connecting map.j03.page kayaking notes back to stable public genealogy pages.</p>
+      const shortcode = match[1];
+      const dayText = match[2];
+      const dayNumber = Number(dayText);
+      const hourOffset = Number(match[3]);
+      const minuteLetter = match[4];
+      const area = match[5];
 
-  <p><strong>Last updated:</strong> 2026-05-16. <strong>Project tags:</strong> #looproj #R3f.</p>
-</section>
+      if (dayNumber < 1 || dayNumber > 90) {
+        throw new Error("Day must be 01 through 90.");
+      }
 
+      if (!FAMILY_GROUPS[shortcode]) {
+        throw new Error("Unknown family shortcode: " + shortcode);
+      }
+
+      const hour24 = 7 + hourOffset;
+      const minRange = minuteRange(minuteLetter);
+
+      if (!minRange) {
+        throw new Error("Minute letter must be A, B, C, or D.");
+      }
+
+      return {
+        original: raw,
+        code,
+        shortcode,
+        family: FAMILY_GROUPS[shortcode],
+        dayText,
+        dayNumber,
+        isoDate: dateFromDay(dayNumber),
+        longDate: longDateFromDay(dayNumber),
+        timeCode: String(hourOffset) + minuteLetter,
+        hourOffset,
+        hourLabel: hourLabel(hour24),
+        minuteLetter,
+        minuteRange: minRange,
+        area,
+        areaName: AREA_MAP[area] || ("Mission Bay area " + area),
+        specialNote: SPECIAL_DAY_NOTES[dayText] || ""
+      };
+    }
+
+    function resultHtml(result) {
+      const family = result.family;
+      const spoken = `${SITE_NAME}. Code ${result.code}. Again, ${result.code}. ${family.speechTopic || family.title}.`;
+
+      return `
+        <div class="result-title">
+          <div>
+            <h3 style="margin:0">${family.title}</h3>
+            <div style="color:#64748b">${family.researchType || "FieldLog genealogy record"}</div>
+          </div>
+          <div class="code-pill">${result.code}</div>
+        </div>
+
+        <div class="kv"><strong>Family shortcode</strong><span>${result.shortcode}</span></div>
+        <div class="kv"><strong>TG / source code</strong><span>${family.tg}</span></div>
+        <div class="kv"><strong>Date</strong><span>${result.longDate} / day ${result.dayText}</span></div>
+        <div class="kv"><strong>Time block</strong><span>${result.timeCode} = ${result.hourLabel}, minutes ${result.minuteRange}</span></div>
+        <div class="kv"><strong>Location</strong><span>${result.areaName}</span></div>
+        <div class="kv"><strong>Topic</strong><span>${family.summary}</span></div>
+
+        ${result.specialNote ? `<div class="note"><strong>Day note:</strong> ${result.specialNote}</div>` : ""}
+
+        <div class="note">
+          <strong>Best GoPro phrase:</strong><br>
+          ${spoken}
+        </div>
+
+        <div class="note">
+          <strong>Research layer:</strong>
+          See <a href="https://luedtkerice.j03.page/" rel="noopener">luedtkerice.j03.page</a>
+          for deeper Luedtke and Rice genealogy research.
+        </div>
+      `;
+    }
+
+    function openCode() {
+      const input = document.getElementById("fieldCode");
+      const out = document.getElementById("resultBox");
+
+      try {
+        const result = parseFieldCode(input.value);
+        out.className = "result-card";
+        out.innerHTML = resultHtml(result);
+
+        if (history.replaceState) {
+          history.replaceState(null, "", "#" + result.code);
+        }
+      } catch (err) {
+        out.className = "warning";
+        out.innerHTML = `<strong>Could not open code.</strong><br>${err.message}`;
+      }
+    }
+
+    function fillExample(code) {
+      document.getElementById("fieldCode").value = code;
+      openCode();
+    }
+
+    function renderFamilyChart() {
+      const target = document.getElementById("familyChart");
+      const rows = Object.entries(FAMILY_GROUPS)
+        .sort((a, b) => a[0].localeCompare(b[0]))
+        .map(([key, value]) => `
+          <tr>
+            <td><strong>${key}</strong></td>
+            <td>${value.tg}</td>
+            <td>${value.title}</td>
+            <td>${value.researchType || ""}</td>
+          </tr>
+        `)
+        .join("");
+
+      target.innerHTML = `
+        <table>
+          <thead>
+            <tr>
+              <th>Shortcode</th>
+              <th>TG / source code</th>
+              <th>Family group</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      `;
+    }
+
+    function boot() {
+      renderFamilyChart();
+
+      if (window.location.hash && window.location.hash.length > 1) {
+        document.getElementById("fieldCode").value = window.location.hash.slice(1);
+      }
+
+      openCode();
+    }
+
+    boot();
+  </script>
 </body>
 </html>
