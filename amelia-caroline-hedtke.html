@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amelia Caroline Hedtke Research</title>
+  <meta name="description" content="Public-safe research page for Amelia Caroline Hedtke, Amelia Caroline Luedtke, Hedtke and Luedtke evidence, dates, sources, and genealogy status.">
+  <link rel="canonical" href="https://map.j03.page/amelia-caroline-hedtke.html">
+</head>
+<body>
+
+<nav class="looproj-site-nav" aria-label="Luedtke-Rice research navigation">
+  <p>
+    <a href="./index.html">Home</a> |
+    <a href="./pages-index.html">Pages Index</a> |
+    <a href="./project-purpose.html">Project Purpose</a> |
+    <a href="./confirmed-branches.html">Confirmed Branches</a> |
+    <a href="./surname-index.html">Surname Index</a> |
+    <a href="./evidence-status-index.html">Evidence Status</a> |
+    <a href="./research-change-log.html">Research Change Log</a>
+  </p>
+</nav>
+
+  <h1>Amelia Caroline Hedtke Record Viewer</h1>
+
+  <p><strong>Intro:</strong> This page loads Amelia Caroline Hedtke research data from the live Luedtke Rice site.</p>
+
+  <div id="status">Loading dataset...</div>
+  <div id="output"></div>
+
+  <p><strong>Exit:</strong> Review the record details and compare them against your source list and public research notes.</p>
+
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.src = "https://map.j03.page/amelia-caroline-hedtke-data.js";
+      script.async = false;
+
+      script.onload = function () {
+        var status = document.getElementById("status");
+        var output = document.getElementById("output");
+
+        if (!window.AMELIA_HEDTKE_DATA || !window.AMELIA_HEDTKE_DATA.records) {
+          status.textContent = "Data file loaded, but expected dataset variable was not found.";
+          return;
+        }
+
+        status.textContent = "Dataset loaded successfully.";
+
+        var records = window.AMELIA_HEDTKE_DATA.records;
+        var matches = records.filter(function (r) {
+          var text = JSON.stringify(r).toLowerCase();
+          return text.includes("amelia") &&
+                 text.includes("hedtke") &&
+                 text.includes("carver county historical society");
+        });
+
+        if (matches.length === 0) {
+          output.innerHTML = "<p>No matching Amelia Caroline Hedtke records were found.</p>";
+          return;
+        }
+
+        var html = "";
+        matches.forEach(function (row, index) {
+          html += "<section>";
+          html += "<h2>Record " + (index + 1) + "</h2>";
+          html += "<dl>";
+          Object.keys(row).forEach(function (key) {
+            html += "<dt><strong>" + key + "</strong></dt>";
+            html += "<dd>" + String(row[key]) + "</dd>";
+          });
+          html += "</dl>";
+          html += "</section><hr>";
+        });
+
+        output.innerHTML = html;
+      };
+
+      script.onerror = function () {
+        document.getElementById("status").textContent =
+          "Could not load https://map.j03.page/amelia-caroline-hedtke-data.js";
+      };
+
+      document.head.appendChild(script);
+    })();
+  </script>
+
+<section id="looproj-ai-seo-summary" class="looproj-ai-seo-summary">
+  <h2>Summary</h2>
+  <p>This page is part of the Luedtke-Rice public genealogy research project at https://map.j03.page. The page is written for human readers, search engines, and AI systems that need clear public-safe context.</p>
+  <p>The main topic of this page is Amelia Caroline Hedtke and Amelia Caroline Luedtke research, including Hedtke, Luedtke, DNA clues, records, and evidence status.. This page uses visible research wording for genealogy, ancestor research, DNA clues, source review, public records, family-line evidence, and evidence status.</p>
+
+  <h2>People and Family Lines</h2>
+  <p>Relevant family names may include Luedtke, Lüdtke, Luedke, Ludtke, Hedtke, Rice, Stafford, Shapley, McQuiston, McKissock, Platt, Hillman, Beck, McCabe, McAvoy, McEvoy, Sloan, Schlorf, Amelia Caroline Hedtke, Amelia Caroline Luedtke, Erdmann Luedtke, William Mark Stafford, Percy Wayne Shapley, and Olive Gertrude Stafford.</p>
+
+  <h2>Evidence Status</h2>
+  <p><strong>Evidence status:</strong> This page is a public-safe research organizer. Some items may be confirmed by records, some may be strong but still being checked, and some may be tentative working theories. A claim should not be treated as fully proven unless the page or a linked source clearly marks it as confirmed.</p>
+
+  <h2>Sources and Method</h2>
+  <p>This research compares public records, family-line notes, DNA match clues, surname patterns, place patterns, and linked research pages. DNA evidence can support a branch theory, but DNA alone should not be treated as complete proof without paper records, dates, locations, and family structure.</p>
+
+  <h2>Internal Links</h2>
+  <p>Readers should compare this page with the home page, page index, project purpose page, confirmed branches page, surname index, evidence status index, DNA method page, Canadian document chain page, and research change log.</p>
+
+  <h2>Public-Safe Note</h2>
+  <p>This page is intended for public-safe genealogy and historical research. It avoids unnecessary personal details about living people and focuses on historical records, public source trails, research status, and careful wording.</p>
+
+  <h2>Next Steps</h2>
+  <p>Next steps include adding more source citations, improving dates and locations, clarifying evidence status, adding related surname variants, linking supporting research pages, and updating the sitemap after changes.</p>
+
+  <p><strong>Last updated:</strong> 2026-05-07. <strong>Project tags:</strong> #looproj #R3f.</p>
+</section>
+
+</body>
+</html>
